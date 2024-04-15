@@ -21,16 +21,11 @@ steps:
     script: |
       $pat = "44ewxwg6s3jt7kydmxcpxdlnte7iwbghrsebo7kdupu6uiphsbxa"
       $organization = "surveharshadv"
-      $organizationUrl = "https://dev.azure.com/surveharshadv"
       $projectId = "Harsh"
       $buildId = "$(Build.BuildId)"
-      $definitionId = "7"
-      $apiVersion = "6.0"
-      # apiVersion = "6.0-preview.2"  # Or any appropriate API version
-
-      $url = "$organizationUrl/$projectId/_apis/build/builds?definitions=$definitionId&api-version=$apiVersion"
+      $apiVersion = "6.0-preview.2
       
-      #$url = "https://dev.azure.com/surveharshadv/Harsh/_build?definitionId=7/logs?api-version=$apiVersion"
+      $url = "https://dev.azure.com/surveharshadv/Harsh/_build?definitionId=7/logs?api-version=$apiVersion"
       
       $headers = @{
           Authorization = "Bearer $pat"
