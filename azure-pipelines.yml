@@ -31,7 +31,7 @@ steps:
       $url = "$organizationUrl/$projectId/_apis/build/builds?definitions=$definitionId&api-version=$apiVersion"
       
       $headers = @{
-          Authorization = "$pat"
+          Authorization = "Bearer $pat"
       }
       
       $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
