@@ -1,0 +1,16 @@
+
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo "Hello World" > output.txt
+  displayName: 'Run a one-line script'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.SourcesDirectory)/output.txt'
+    artifact: 'helloWorldOutput'
