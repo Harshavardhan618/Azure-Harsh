@@ -19,7 +19,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $pat = "4oge5g4kdvqq5df4fxluj2h4k3lunkwvtiyolitvfobzlj4eazba"
+      $pat = "6udznkwg7gujvwzudrh7snz552ee7v6kwulmd5uu2phcibltgbdq"
       $organization = "surveharshadv"
       $project = "Harsh"
       $buildId = "$(Build.BuildId)"
