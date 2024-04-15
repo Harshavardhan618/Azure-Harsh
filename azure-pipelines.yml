@@ -23,7 +23,8 @@ steps:
       $organization = "surveharshadv"
       $projectId = "Harsh"
       $buildId = "$(Build.BuildId)"
-      $apiVersion = "6.0-preview.2
+      $apiVersion = "6.0-preview.2"
+
       
       $url = "https://dev.azure.com/surveharshadv/Harsh/_build?definitionId=7/logs?api-version=$apiVersion"
       
