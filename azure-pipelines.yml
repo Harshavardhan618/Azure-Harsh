@@ -28,7 +28,7 @@ steps:
       $url = "https://dev.azure.com/surveharshadv/Harsh/_build?definitionId=7/logs?api-version=$apiVersion"
       
       $headers = @{
-          Authorization = "Bearer $pat"
+          Authorization = "$pat"
       }
       
       $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
