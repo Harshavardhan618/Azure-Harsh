@@ -14,3 +14,29 @@ steps:
   inputs:
     targetPath: '$(Build.SourcesDirectory)/output.txt'
     artifact: 'helloWorldOutput'
+  
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $pat = "4oge5g4kdvqq5df4fxluj2h4k3lunkwvtiyolitvfobzlj4eazba"
+      $organization = "surveharshadv"
+      $project = "Harsh"
+      $buildId = "$(Build.BuildId)"
+      $apiVersion = "6.0-preview.2"  # Or any appropriate API version
+      
+      $url = "https://dev.azure.com/surveharshv/Harsh/_build?definitionId=7/logs?api-version=$apiVersion"
+      
+      $headers = @{
+          Authorization = "Basic " + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$($pat)"))
+      }
+      
+      $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
+      
+      # Output the build logs content
+      if ($response.value.content -ne $null) {
+          Write-Host "Build Logs:"
+          Write-Host $response.value.content
+      } else {
+          Write-Host "Build logs not found or inaccessible."
+      }
