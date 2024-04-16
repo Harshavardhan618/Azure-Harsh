@@ -39,7 +39,7 @@ steps:
       # Output the build logs content
       if ($response.value.count -gt 0) {
        $buildId = $response.value[0].id
-       $logsUrl = "$organizationUrl/$projectId/_apis/build/builds/$buildId/logs?api-version=$apiVersion"
+       $logsUrl = "https://dev.azure.com/surveharshadv/Harsh/_build?definitionId=4/logs?api-version=$apiVersion"
        $logsResponse = Invoke-RestMethod -Uri $logsUrl -Headers $headers -Method Get
        if ($logsResponse.value.content -ne $null) {
           Write-Host "Build logs content:"
