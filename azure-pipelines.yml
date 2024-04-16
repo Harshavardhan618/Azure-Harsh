@@ -22,7 +22,7 @@ steps:
       $pat = "44ewxwg6s3jt7kydmxcpxdlnte7iwbghrsebo7kdupu6uiphsbxa"
       $organization = "surveharshadv"
       $organizationUrl = "https://dev.azure.com/surveharshadv"
-      $definitionId = "7"
+      $definitionId = "4"
       $projectId = "Harsh"
       $buildId = "$(Build.BuildId)"
       $apiVersion = "6.0-preview.2"
